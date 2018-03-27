@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!--声明页面编码 utf-8国际编码-->
+    <meta name="Generator" content="Webstorm"><!--使用编辑器-->
+    <meta name="Author" content="流云似海"><!--作者-->
+    <meta name="Keywords" content="作业"><!--关键字-->
+    <meta name="Description" content=""><!--网页描述-->
+    <title>发布文字</title>
+    <style>
+        body {font-family: "Microsoft YaHei", serif;}
+        body, dl, dd, p, h1, h2, h3, h4, h5, h6 {margin: 0;}
+        ol, ul, li {margin: 0;padding: 0;list-style: none;}
+        img {border: none;}
+
+        #wrap{
+            width:300px;
+        }
+        #text{
+            width:300px;
+            height:200px;
+            margin:auto;
+        }
+        #btn{
+            display:block;
+            float:right;
+        }
+        #list li{
+            width:100px;
+            line-height:30px;
+            border-bottom:1px dashed #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <textarea name="" id="text" cols="30" rows="10"></textarea>
+        <input type="button" id="btn" value="发布">
+        <ul id="list"></ul>
+    </div>
+    <script>
+        var oText = document.getElementById("text"),
+            oBtn = document.getElementById("btn"),
+            oList = document.getElementById("list");
+
+        oBtn.onclick = function(){
+            if(oText.value != ""){
+                oList.innerHTML += "<li>"+ oText.value + "</li>";
+            }
+            oText.value = "";
+        }
+    </script>
+</body>
+</html>
